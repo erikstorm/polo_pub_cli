@@ -2,6 +2,7 @@ defmodule Utils.Printer do
 
   def format_tickerdata(input) do
     input
+    |> Enum.filter(fn({key, value}) -> key != "date" end)
     |> Enum.map(fn({key, value}) ->
         IO.puts "\n\t#{key}\n"
         Enum.map(value, fn({k, v}) ->
@@ -16,6 +17,7 @@ defmodule Utils.Printer do
 
   def format_pricedata(input) do
     input
+    |> Enum.filter(fn({key, value}) -> key != "date" end)
     |> Enum.map(fn({key, value}) ->
       if(key == "quoteVolume" || key == "weightedAverage") do
         "#{key}\t#{value}\n"
@@ -75,7 +77,7 @@ defmodule Utils.Printer do
     Description:
 
     Simple cli app for pulling Poloniex public API
-    data.
+    price data.
     """
     System.halt
   end
