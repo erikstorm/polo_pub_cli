@@ -1,19 +1,43 @@
-# PoloPubCli
+# polo_pub_cli
 
-**TODO: Add description**
+## Description:
 
-## Installation
+Very simple cli app for checking  [Poloniex](https://poloniex.com/) prices from the public api. Compiled binary works on all platforms that have some version of [erlang](http://www.erlang.org/downloads) installed. If you want to compile yourself you need to install [elixir](https://elixir-lang.org/install.html).
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `polo_pub_cli` to your list of dependencies in `mix.exs`:
+## Install:
 
-```elixir
-def deps do
-  [{:polo_pub_cli, "~> 0.1.0"}]
-end
-```
+Get dependencies
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/polo_pub_cli](https://hexdocs.pm/polo_pub_cli).
+`mix deps.get`
+
+Compile
+
+`mix escript.build`
+
+Run 
+
+`./polo_pub_cli`
+
+## Usage:
+
+`./polo_pub_cli [option] [CURRENCY_PAIR]`
+
+## Options:
+
+`--price` 	 Gets currency pair price.
+
+`--watch` 	 Gets price every 15 seconds.
+
+`--ticker` 	 Print exchange ticker.
+
+`--help`  	 Show help message.
+
+## Examples: 	
+`./polo_pub_cli --price "BTC_ETH"`
+          	
+`./polo_pub_cli --watch "BTC_LTC"`
+
+`./polo_pub_cli --ticker`
+
+
 
